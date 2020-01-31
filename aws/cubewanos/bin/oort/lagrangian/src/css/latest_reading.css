@@ -1,0 +1,37 @@
+
+.Top-Container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    color: var(--font-color);
+    align-items: center;
+    justify-content: center;
+}
+
+.Stats-Container {
+    display: flex;
+    flex-direction: row;
+}
+
+.Reading-Container {
+    display: flex;
+}
+
+.SubReading-Container {
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.MainReading {
+    font-size: calc(10px + 15vmin);
+}
+
+.SubReading {
+    text-align: left;
+    font-size: calc(10px + 2vmin);
+}
+
+.Time {
+    font-size: calc(5px + 1vmin);
+}

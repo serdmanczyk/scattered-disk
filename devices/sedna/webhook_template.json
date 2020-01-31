@@ -1,0 +1,12 @@
+{
+    "eventName": "Reading",
+    "url": "https://api.cubewanos.erdmanczyk.com/reading",
+    "requestType": "POST",
+    "json": {},
+    "headers": {
+      "Content-Type": "application/json",
+      "x-api-key": "<ELIDED>"
+    },
+    "mydevices": true
+  }
+  

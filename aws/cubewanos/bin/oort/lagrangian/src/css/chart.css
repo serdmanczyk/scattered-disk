@@ -1,0 +1,113 @@
+
+.ChartContainer {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.ChartItem {
+    width: 750px;
+    height: 350px;
+    justify-content: center;
+}
+
+.ChartRect {
+    fill: var(--background-color);
+}
+
+.ChartText {
+    /* fill: var(--font-color); */
+    font-size: calc(1px + 2vmin);
+}
+
+/* .ChartCircle {
+    fill: var(--font-color);
+    stroke: var(--button-font-color)
+} */
+
+/* .ChartLine {
+} */
+
+.Tooltip {
+    background-color: var(--button-color);
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (orientation: portrait) { 
+
+    .ChartItem {
+        width: 375px;
+        height: 300px;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (orientation: landscape) { 
+
+    .ChartItem {
+        width: 812px;
+        height: 300px;
+    }
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (orientation: portrait) { 
+
+    .ChartItem {
+        width: 414px;
+        height: 300px;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (orientation: landscape) { 
+
+    .ChartItem {
+        width: 736px;
+        height: 325px;
+    }
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  /* and (-webkit-min-device-pixel-ratio: 2) */
+  and (orientation: portrait) { 
+
+    .ChartItem {
+        width: 375px;
+        height: 350px;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  /* and (-webkit-min-device-pixel-ratio: 2) */
+  and (orientation: landscape) { 
+
+    .ChartItem {
+        width: 667px;
+        height: 300px;
+    }
+}

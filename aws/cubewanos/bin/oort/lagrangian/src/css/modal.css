@@ -1,0 +1,111 @@
+
+.Modal {
+    position: absolute;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    text-align: center;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-color);
+}
+
+.ModalApp {
+    height: 100%;
+}
+
+.ModalRows {
+    display: flex;
+    flex-flow: column;
+    height: 100%
+}
+
+.ModalContentRows {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.ModalNav {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    z-index: 100;
+}
+
+.ModalContent {
+    flex-grow: 1;
+}
+
+.Viewbutton {
+    background-color: var(--button-color);
+    color: var(--button-font-color);
+    border: none;
+    padding: .5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 4px;
+}
+
+.Meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.MetaWords {
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 812px) {
+    .Modal {
+        top: 20vh;
+        left: 20vw;
+        right: 20vw;
+        bottom: 20vh;
+        font-size: calc(1px + 2.5vmin);
+    }
+
+    .Viewbutton {
+        font-size: calc(1px + 2.5vmin);
+    }
+
+    .Viewbutton:hover {
+        background-color: var(--button-hover-color);
+        color: var(--button-font-color);
+    }
+
+    .Viewbutton:active {
+        background-color: var(--button-color-hover);
+        color: var(--button-font-color);
+    }
+}
+    
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 812px) {
+    .Modal {
+        top: 0vh;
+        left: 0vw;
+        right: 0vw;
+        bottom: 0vh;
+        font-size: calc(1px + 7vmin);
+    }
+
+    .Viewbutton {
+        font-size: calc(1px + 5vmin);
+    }
+
+    .Viewbutton:active {
+        background-color: var(--button-color-hover);
+        color: var(--button-font-color);
+    }
+}

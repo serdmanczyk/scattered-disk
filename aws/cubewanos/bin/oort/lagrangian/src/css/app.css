@@ -1,0 +1,20 @@
+:root{
+    --background-color: #133436;
+    --button-color: #1e3e3a;
+    --button-hover-color: #2c493e;
+    --button-font-color: #F3D7CA;
+    --button-color-hover: #82D1DE;
+    --font-color: #88d3df;
+    --fire-color: #de6a6a;
+    --fire-color: #ed9d74;
+}
+
+
+.App {
+    background-color: var(--background-color);
+    min-height: 100vh;
+}
+
+p span {
+    display: block;
+}
