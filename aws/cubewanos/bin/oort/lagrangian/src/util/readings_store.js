@@ -8,6 +8,7 @@ const READINGS_KEY = '[coreid+timestamp]'
 const TEMPERATURE_SENTINEL = -434.45
 const TWELVE_MINUTES = (60*12)
 var readingsDB = new Dexie(DB_NAME);
+
 const dev = process.env.NODE_ENV === 'development'
 
 readingsDB.version(1).stores({
@@ -35,7 +36,6 @@ async function fetchReadingsAPI(coreid, startTime, endTime) {
     }
 
     const res = await result.json()
-    console.log('fetched', res)
     return res
 }
 
@@ -66,7 +66,6 @@ function calcMissingSpans(requested, inDB) {
 
     const format_stamp = (stmp) => moment.unix(stmp).utc().format()
     const format_spans = (spans) => spans.map(format_stamp)
-    console.log('missing', requested.map(format_stamp), missingSpans.map(format_spans))
     return missingSpans
 }
 
@@ -90,9 +89,12 @@ function sentinelGen(coreid) {
 function readingsProper(readings) {
     return readings
         .filter((reading) => {
-            return reading.temperature !== TEMPERATURE_SENTINEL
+          const diff = Math.abs(reading.temperature - TEMPERATURE_SENTINEL)
+          return diff > 0.01;
         })
-        .sort((reading) => reading.timestamp)
+        .sort((readingA, readingB) => {
+          return readingA.timestamp < readingB.timestamp ? -1 : 1;
+        })
 }
 
 function calcSentinels(readings, coreid, startTime, endTime) {
@@ -114,7 +116,6 @@ async function fetchReadings(coreid, startTime, endTime) {
         return readingsProper(dbReadings)
     }
     if (dbReadings.length) {
-        console.log('db', dbReadings)
         const requested = [startTime, endTime]
         const inDB = readingsExtent(dbReadings)
         const missingReadings = await fetchMissingAPI(coreid, requested, inDB)

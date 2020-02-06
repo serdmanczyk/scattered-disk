@@ -27,6 +27,7 @@ const keys = {
     A: 65,
     ESC: 27
 }
+
 const dev = process.env.NODE_ENV === 'development'
 
 // function summarize(attribute, readings, precision) {
@@ -387,9 +388,11 @@ function ReadingsView({ coreid, closeModal }) {
         const now = moment.unix(TIME_LOADED)
         const cappedEnd = end > now ? now : end
         const timeoutId = setTimeout(() => {setloading(true)}, 500)
+        setReadings([])
         fetchReadings(coreid, start.unix(), cappedEnd.unix())
             .then(readings => {
                 clearTimeout(timeoutId)
+                console.log(readings)
                 setReadings(readings)
                 setloading(false)
             })

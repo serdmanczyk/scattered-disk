@@ -9,6 +9,7 @@ import {typeTemperature, typeHumidity, typePressure,
 import { fetchLatestReading } from '../util/readings_store'
 import { zip, sum } from 'd3-array';
 import '../css/latest_reading.css';
+
 const dev = process.env.NODE_ENV === 'development'
 
 // const DEFAULT_READING = {
